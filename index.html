@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<meta name="theme-color" content="#0b0d18" />
+<title>Rick & Morty: Galactic Conquest</title>
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <canvas id="game" aria-label="Rick and Morty RTS game"></canvas>
+
+  <div id="hud">
+    <div id="topbar">
+      <div id="resources">
+        <span class="res-icon" aria-hidden="true"></span>
+        <span id="darkmatter">0</span>
+        <span class="res-label">Dark Matter</span>
+      </div>
+      <div id="supply"><span id="supply-cur">0</span>/<span id="supply-max">0</span> supply</div>
+      <button id="menu-toggle" type="button" aria-label="Toggle menu">≡</button>
+    </div>
+
+    <div id="minimap-wrap">
+      <canvas id="minimap" width="160" height="160"></canvas>
+    </div>
+
+    <div id="selection-panel" class="hidden">
+      <div id="sel-portrait"></div>
+      <div id="sel-info">
+        <div id="sel-name">—</div>
+        <div id="sel-hp"></div>
+        <div id="sel-extra"></div>
+      </div>
+    </div>
+
+    <div id="build-bar"></div>
+
+    <div id="messages"></div>
+
+    <div id="end-overlay" class="hidden">
+      <div id="end-title">Victory</div>
+      <div id="end-sub">The Council of Ricks salutes you.</div>
+      <button id="end-restart" type="button">Play again</button>
+    </div>
+
+    <div id="intro-overlay">
+      <div id="intro-card">
+        <h1>Rick &amp; Morty: <span>Galactic Conquest</span></h1>
+        <p>Harvest Dark Matter, train Mortys, build a Garage and Barracks, then crush the Galactic Federation. Wubba lubba dub dub!</p>
+        <div class="controls-cols">
+          <div>
+            <h3>Desktop</h3>
+            <ul>
+              <li>Left-click / drag to select</li>
+              <li>Right-click to move / attack / gather</li>
+              <li>Arrow keys to pan</li>
+              <li>B – build menu, Esc – cancel</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Mobile</h3>
+            <ul>
+              <li>Tap to select</li>
+              <li>Long-press to issue command</li>
+              <li>Drag empty terrain to pan</li>
+              <li>Use the bottom build bar</li>
+            </ul>
+          </div>
+        </div>
+        <button id="intro-start" type="button">Schwifty Start</button>
+      </div>
+    </div>
+
+    <div id="fps" class="hidden"></div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
